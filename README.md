@@ -4,10 +4,11 @@ Bootstrappable Cloud Computing Laboratory - Grindset Edition
 
 ```bash
 # For the first node
-k3sup install --ip 5.9.209.221 --merge --user root --context grindset --local-path ~/.kube/config
+k3sup install --ip 5.9.209.221 --merge --user root \
+    --context grindset --local-path ~/.kube/config
 
 # For subsequent nodes
-k3sup join --ip 5.9.209.222 --server-ip 5.9.209.221 --user root
+k3sup join --ip 5.9.209.222 --server-ip 5.9.209.221 \--user root
 ```
 
 ## todo

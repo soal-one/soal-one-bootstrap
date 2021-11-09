@@ -32,7 +32,7 @@ metadata:
 spec:
   project: production
   source:
-    repoURL: git@github.com:chazu/pequod
+    repoURL: git@github.com:avaxrealms/pequod-grindset
     targetRevision: HEAD
     path: production
   destination:

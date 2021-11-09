@@ -12,7 +12,7 @@ update-argo-password: ## Update argo admin password
 
 .PHONY: argo-add-config-repo
 argo-add-config-repo:
-	 argocd repo add git@github.com:chazu/pequod --ssh-private-key-path ~/.ssh/argocd_id_rsa
+	 argocd repo add git@github.com:avaxrealms/pequod-grindset --ssh-private-key-path ~/.ssh/id_rsa_argocd_grindset
 
 .PHONY: add-cluster-config
 add-cluster-config: ## Get the cluster config from CLUSTER_HOST and splice it into our config
