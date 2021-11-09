@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
 - cert-manager.yaml
 - do-issuer.yaml
-namespace: cert-manager
+namespace: kube-system
