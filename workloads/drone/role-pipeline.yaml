@@ -1,0 +1,42 @@
+---
+# Source: drone/templates/role-pipeline.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: drone-pipeline
+  labels:
+    app: drone
+    chart: "drone-2.4.0"
+    release: "drone"
+    heritage: "Tiller"
+rules:
+  - apiGroups:
+      - extensions
+    resources:
+      - deployments
+    verbs:
+      - get
+      - list
+      - watch
+      - patch
+      - update
+  - apiGroups:
+      - ""
+    resources:
+      - namespaces
+      - configmaps
+      - secrets
+      - pods
+      - services
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - ""
+    resources:
+      - pods/log
+    verbs:
+      - get

@@ -1,0 +1,28 @@
+---
+# Source: drone/templates/role.yaml
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: drone
+  labels:
+    app: drone
+    chart: "drone-2.4.0"
+    release: "drone"
+    heritage: "Tiller"
+rules:
+  - apiGroups:
+      - batch
+    resources:
+      - jobs
+    verbs:
+      - "*"
+  - apiGroups:
+      - extensions
+    resources:
+      - deployments
+    verbs:
+      - get
+      - list
+      - patch
+      - update

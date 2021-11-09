@@ -1,0 +1,22 @@
+---
+# Source: drone/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: drone
+  annotations:
+  labels:
+    app: drone
+    chart: "drone-2.4.0"
+    release: "drone"
+    heritage: "Tiller"
+spec:
+  type: ClusterIP
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+  selector:
+    app: drone
+    release: "drone"
+    component: server

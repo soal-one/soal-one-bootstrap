@@ -1,0 +1,28 @@
+---
+# Source: drone/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: drone
+  labels:
+    app: drone
+    heritage: "Tiller"
+  annotations:
+    cert-manager.io/cluster-issuer: "acme-issuer"
+    ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: "nginx"
+    kubernetes.io/ingress.allow-http: "false"
+    kubernetes.io/tls-acme: "true"
+spec:
+  rules:
+    - host: drone.itscoming.run
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: drone
+              servicePort: 80
+  tls:
+    - hosts:
+      - drone.itscoming.run
+      secretName: drone-tls

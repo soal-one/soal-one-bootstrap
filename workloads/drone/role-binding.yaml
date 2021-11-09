@@ -1,0 +1,20 @@
+---
+# Source: drone/templates/role-binding.yaml
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: drone
+  labels:
+    app: drone
+    chart: "drone-2.4.0"
+    release: "drone"
+    heritage: "Tiller"
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: drone
+subjects:
+- kind: ServiceAccount
+  name: drone
+  namespace: drone

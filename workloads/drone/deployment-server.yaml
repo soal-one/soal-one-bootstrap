@@ -1,0 +1,100 @@
+---
+# Source: drone/templates/deployment-server.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: drone-server
+  labels:
+    app: drone
+    component: server
+spec:
+  selector:
+    matchLabels:
+      app: drone
+      component: server
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        checksum/secrets: 319c2ba3e43956f43b2a2db75e4fd018e05c90c245dc7275f731bfd2b02dff45
+        # prometheus.io/scrape: "true"
+        # prometheus.io/port: "8000"
+      labels:
+        app: drone
+        release: "drone"
+        component: server
+    spec:
+      serviceAccountName: drone
+      containers:
+      - name: server
+        image: "docker.io/drone/drone:1.6.1"
+        imagePullPolicy: IfNotPresent
+        env:
+          - name: DRONE_LOGS_DEBUG
+            value: "true"
+          - name: DRONE_LOGS_PRETTY
+            value: "true"
+          - name: DRONE_KUBERNETES_ENABLED
+            value: "true"
+          - name: DRONE_KUBERNETES_NAMESPACE
+            value: drone
+          - name: DRONE_KUBERNETES_SERVICE_ACCOUNT
+            value: drone-pipeline
+          - name: DRONE_GIT_ALWAYS_AUTH
+            value: "false"
+          - name: DRONE_SERVER_HOST
+            value: "drone.itscoming.run"
+          - name: DRONE_RPC_PROTO
+            value: "http"
+          - name: DRONE_RPC_HOST
+            value: drone.drone:80
+          - name: DRONE_SERVER_PROTO
+            value: http
+          - name: DRONE_USER_CREATE
+            value: username:chazu,machine:false,admin:true
+          - name: DRONE_RPC_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: drone
+                key: secret
+          - name: DRONE_DATABASE_DATASOURCE
+            value: "/var/lib/drone/drone.sqlite"
+          - name: DRONE_DATABASE_DRIVER
+            value: "sqlite3"
+          - name: DRONE_LOGS_DEBUG
+            value: "false"
+          - name: DRONE_GITHUB_CLIENT_ID
+            value: c08403e4a38db6e91279
+          - name: DRONE_GITHUB_SERVER
+            value: https://github.com
+          - name: DRONE_GITHUB_CLIENT_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: drone
+                key: client_secret
+        ports:
+        - name: http
+          containerPort: 80
+          protocol: TCP
+        - name: https
+          containerPort: 443
+          protocol: TCP
+        - name: grpc
+          containerPort: 9000
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+        resources:
+          {}
+
+        volumeMounts:
+
+        - name: data
+          mountPath: /var/lib/drone
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: drone
