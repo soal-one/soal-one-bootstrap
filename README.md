@@ -1,9 +1,14 @@
 # Pequod
 
 Bootstrappable Cloud Computing Laboratory - Grindset Edition
-`k3sup install --ip 5.9.209.221 --merge --user root --context grindset --local-path /home/chazu/.kube/config`
 
-`k3sup join --ip 5.9.209.222 --server-ip 5.9.209.221 --user root`
+```bash
+# For the first node
+k3sup install --ip 5.9.209.221 --merge --user root --context grindset --local-path ~/.kube/config
+
+# For subsequent nodes
+k3sup join --ip 5.9.209.222 --server-ip 5.9.209.221 --user root
+```
 
 ## todo
  - pretty sure cert-manager doesn't work correctly
