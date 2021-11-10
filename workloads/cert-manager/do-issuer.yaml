@@ -1,4 +1,4 @@
-apiVersion: cert-manager.io/v1
+apiVersion: cert-manager.io/v11
 kind: ClusterIssuer
 metadata:
   name: acme-issuer
@@ -6,8 +6,6 @@ spec:
   acme:
     email: chaz.straney@gmail.com
     server: https://acme-v02.api.letsencrypt.org/directory
-    privateKeySecretRef:
-      name: acme-cluster-issuer-account-key
     solvers:
     - dns01:
         digitalocean:
