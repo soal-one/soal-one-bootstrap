@@ -6,7 +6,6 @@ metadata:
 spec:
   destination:
     namespace: ingress-nginx
-    name: ingress-nginx
   project: production
   syncPolicy:
     automated: {}
