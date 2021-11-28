@@ -4,16 +4,15 @@ metadata:
   name: ingress-nginx
   namespace: argocd
 spec:
-  destination: ingress-nginx
-  namespace: ingress-nginx
-  name: ingress-nginx
+  destination:
+    namespace: ingress-nginx
+    name: ingress-nginx
   project: production
   syncPolicy:
     automated: {}
     syncOptions:
       - CreateNamespace=true
   source:
-
     repoURL: https://kubernetes.github.io/ingress-nginx
     chart: ingress-nginx
     targetRevision: 1.1.0
