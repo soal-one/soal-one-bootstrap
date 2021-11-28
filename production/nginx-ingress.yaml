@@ -4,6 +4,9 @@ metadata:
   name: ingress-nginx
   namespace: argocd
 spec:
+  destination:
+    namespace: ingress-nginx
+    server: 'https://kubernetes.default.svc'
   project: production
   syncPolicy:
     automated: {}
