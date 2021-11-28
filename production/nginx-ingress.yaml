@@ -14,6 +14,7 @@ spec:
       - CreateNamespace=true
   source:
     chart: ingress-nginx
+    repoURL: https://kubernetes.github.io/ingress-nginx
     targetRevision: 4.0.11
     helm:
       values: |
