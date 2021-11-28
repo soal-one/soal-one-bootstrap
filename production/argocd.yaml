@@ -9,7 +9,7 @@ spec:
   project: production
   source:
     path: workloads/argocd/overlays/production
-    repoURL: git@github.com:chazu/pequod
+    repoURL: git@github.com:avaxrealms/pequod-grindset
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
