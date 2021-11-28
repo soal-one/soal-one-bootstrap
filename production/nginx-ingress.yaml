@@ -5,8 +5,8 @@ metadata:
   namespace: argocd
 spec:
   destination: ingress-nginx
-    namespace: ingress-nginx
-    name: ingress-nginx
+  namespace: ingress-nginx
+  name: ingress-nginx
   project: production
   syncPolicy:
     automated: {}
