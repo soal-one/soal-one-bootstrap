@@ -47,13 +47,9 @@ make argo-add-config-repo
 
 
 ## TODO
+- Get nginx-ingress working with metallb - nginx daemonset and get it showing default backend
+- Argocd has some reference to a traefik crd that doesn't exist...
 - Add terraform folder & scripts for terraform (for building cluster)
-- Script/make target to get argocd admin password
-- Script/make target to bootstrap server with k3s, retrieve config and add to kubeconfig file
-- Automate addition of repository for argocd
-- Automate test environment setup using kind
-- Parameterize ingress and other relevant details when bootstrapping
-- Start adding workloads, possibly adding tooling to support simple configuration
 depending on use case
 - Add workload: crossplane
 - Add workload: OAM
