@@ -1,6 +1,6 @@
-oapiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-- cert-manager.yaml
-- do-issuer.yaml
-namespace: cert-manager
+# oapiVersion: kustomize.config.k8s.io/v1beta1
+# kind: Kustomization
+# resources:
+# - cert-manager.yaml
+# - do-issuer.yaml
+# namespace: cert-manager
