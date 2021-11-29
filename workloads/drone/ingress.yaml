@@ -15,7 +15,7 @@ metadata:
     kubernetes.io/tls-acme: "true"
 spec:
   rules:
-    - host: drone.itscoming.run
+    - host: drone.waifu.plus
       http:
         paths:
           - path: /
