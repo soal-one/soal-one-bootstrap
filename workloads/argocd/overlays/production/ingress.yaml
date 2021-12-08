@@ -1,18 +1,4 @@
 ---
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: ingresstest
-
-spec:
-  entryPoints:
-    - http
-  routes:
-  - match: Host(*)
-    kind: Rule
-    services:
-    - name: argocd-server
-      port: 443
 # apiVersion: networking.k8s.io/v1
 # kind: Ingress
 # metadata:
