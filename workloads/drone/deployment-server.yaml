@@ -56,7 +56,7 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: drone
-                key: secret
+                key: rpc_secret
           - name: DRONE_DATABASE_DATASOURCE
             value: "/var/lib/drone/drone.sqlite"
           - name: DRONE_DATABASE_DRIVER
