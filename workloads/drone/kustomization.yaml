@@ -3,14 +3,14 @@ kind: Kustomization
 resources:
 - deployment-server.yaml
 - deployment-runner.yaml
-- ingress.yaml
+# - ingress.yaml
 - namespace-pipeline.yaml
 - pvc.yaml
 #- role-binding-pipeline.yaml
 - role-binding.yaml
 - role.yaml
 - secrets.yaml
-- service-account-pipeline.yaml
+#- service-account-pipeline.yaml
 - service-account.yaml
 - service.yaml
 namespace: drone
