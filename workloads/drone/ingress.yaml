@@ -6,7 +6,6 @@ metadata:
   name: drone
   labels:
     app: drone
-    heritage: "Tiller"
   annotations:
     cert-manager.io/cluster-issuer: "acme-issuer"
     ingress.kubernetes.io/ssl-redirect: "true"
