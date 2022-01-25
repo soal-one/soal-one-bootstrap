@@ -7,9 +7,6 @@ metadata:
   annotations:
   labels:
     app: drone
-    chart: "drone-2.4.0"
-    release: "drone"
-    heritage: "Tiller"
 spec:
   type: ClusterIP
   ports:

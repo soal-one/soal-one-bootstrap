@@ -22,13 +22,12 @@ spec:
         # prometheus.io/port: "8000"
       labels:
         app: drone
-        release: "drone"
         component: server
     spec:
       serviceAccountName: drone
       containers:
       - name: server
-        image: "docker.io/drone/drone:1.6.1"
+        image: "docker.io/drone/drone:2.8.0"
         imagePullPolicy: IfNotPresent
         env:
           - name: DRONE_LOGS_DEBUG
@@ -44,7 +43,7 @@ spec:
           - name: DRONE_GIT_ALWAYS_AUTH
             value: "false"
           - name: DRONE_SERVER_HOST
-            value: "drone.itscoming.run"
+            value: "drone.softchewy.center"
           - name: DRONE_RPC_PROTO
             value: "http"
           - name: DRONE_RPC_HOST
