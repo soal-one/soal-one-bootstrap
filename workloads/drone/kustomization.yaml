@@ -9,7 +9,7 @@ resources:
 #- role-binding-pipeline.yaml
 - role-binding.yaml
 - role.yaml
-- secrets.yaml
+# - secrets.yaml
 #- service-account-pipeline.yaml
 - service-account.yaml
 - service.yaml
