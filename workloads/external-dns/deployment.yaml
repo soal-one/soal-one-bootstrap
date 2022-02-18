@@ -22,6 +22,7 @@ spec:
         - --source=ingress # ingress is also possible
         - --domain-filter=itscoming.run,avaxrealms.com,softchewy.center,waifu.plus # (optional) limit to only example.com domains; change to match the zone created above.
         - --provider=digitalocean
+        - --log-level=debug
         envFrom:
         - secretRef:
             name: do-token
