@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: external-dns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: external-dns
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: external-dns
+    spec:
+      serviceAccountName: external-dns
+      containers:
+      - name: external-dns
+        image: k8s.gcr.io/external-dns/external-dns:v0.11.0
+        args:
+        - --source=ingress # ingress is also possible
+        - --domain-filter=itscoming.run,avaxrealms.com,softchewy.center,waifu.plus # (optional) limit to only example.com domains; change to match the zone created above.
+        - --provider=digitalocean
+        envFrom:
+        - secretRef:
+            name: do-token

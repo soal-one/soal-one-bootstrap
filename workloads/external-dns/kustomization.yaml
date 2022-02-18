@@ -1,0 +1,6 @@
+namespace: default
+resources:
+- https://github.com/kubernetes-sigs/external-dns/kustomize?ref=v0.10.2
+
+patchesStrategicMerge:
+- deployment.yaml
