@@ -23,7 +23,6 @@ kind: Service
 metadata:
   name: nginx
   annotations:
-    external-dns.alpha.kubernetes.io/internal-hostname: fuck.itscoming.run
     external-dns.alpha.kubernetes.io/hostname: fuck.itscoming.run
 spec:
   selector:
