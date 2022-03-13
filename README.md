@@ -1,6 +1,4 @@
-# Pequod
-
-Bootstrappable Cloud Computing Laboratory
+# Bootstrappable Cloud Computing Laboratory
 
 First take a look at the k0s.yaml configuration and change it to your liking.
 Then:
