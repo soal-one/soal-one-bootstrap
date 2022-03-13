@@ -1,19 +1,18 @@
 # Pequod
 
-Bootstrappable Cloud Computing Laboratory - Grindset Edition
+Bootstrappable Cloud Computing Laboratory
 
+First take a look at the k0s.yaml configuration and change it to your liking.
+Then:
 ```bash
-# For the first node
-k3sup install --ip 5.9.209.221 --merge --user root \
-    --context grindset --local-path ~/.kube/config
-
-# For subsequent nodes
-k3sup join --ip 5.9.209.222 --server-ip 5.9.209.221 \--user root
+k0s apply
 ```
 
 ## todo
- - pretty sure cert-manager doesn't work correctly
- - LB config is still manual - this is probably okay tbh
+ - clean up the repo ffs
+ - kill clusters on hetzner dedis
+ - add direnv to set up secrets - do token etc
+ - set up local testing harness? dunno
  - how do i get around pomerium's stupid helm chart wanting inline secrets lol
 
 ## Quick Start

@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: kuard
+  namespace: default
+spec:
+  dnsNames:
+    - kuard.itscoming.run
+  secretName: kuard-tls
+  issuerRef:
+    name: acme-issuer
+    kind: ClusterIssuer
