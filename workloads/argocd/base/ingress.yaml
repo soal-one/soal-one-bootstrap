@@ -7,6 +7,8 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/rewrite-target: /
+    external-dns.alpha.kubernetes.io/ingress-hostname-source: annotation-only
+    external-dns.alpha.kubernetes.io/hostname: fuck.itscoming.run
 spec:
   rules:
   - http:
@@ -18,5 +20,4 @@ spec:
            name: argocd-server
            port:
              number: 80
-    host: acme.com
-
+    host: argo.itscoming.run

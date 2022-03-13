@@ -3,19 +3,14 @@
 First take a look at the k0s.yaml configuration and change it to your liking.
 Then:
 ```bash
-k0s apply
+
 ```
 
-## todo
- - clean up the repo ffs
- - kill clusters on hetzner dedis
- - add direnv to set up secrets - do token etc
- - set up local testing harness? dunno
- - how do i get around pomerium's stupid helm chart wanting inline secrets lol
 
 ## Quick Start
 
 ```
+k0s apply
 make add-cluster-config
 make bootstrap
 make argo-password # Returns the admin argo password
