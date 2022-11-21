@@ -1,9 +1,0 @@
----
-# Source: drone/templates/namespace-pipeline.yaml
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: drone
-  labels:
-    app: drone
-    component: server

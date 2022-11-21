@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DEPLOY_ENV=production
+DEPLOY_ENV=staging
 
 kubectl create ns argocd
 # Install argocd
