@@ -2,3 +2,4 @@
 *.tfstate
 *.tfstate.backup
 ./workloads/drone/secrets.yaml
+terraform/.terraform
