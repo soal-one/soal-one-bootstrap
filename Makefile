@@ -16,4 +16,21 @@ argo-password: ## Get the initial password for argocd
 
 .PHONY: argo-add-config-repo
 argo-add-config-repo:
-	 argocd repo add git@github.com:soal-one/soal-one-bootstrap --ssh-private-key-path ~/.ssh/id_rsa_argocd_grindset
+	 argocd repo add git@github.com:soal-one/soal-one-bootstrap --ssh-private-key-path ~/.ssh/id_ed25519_soalone_staging
+
+.PHONY: add-do-token-secret
+add-do-token-secret: ## Add the DigitalOcean token used by External dns
+	k8sec set do-token token=$$DIGITALOCEAN_ACCESS_TOKEN -n default
+
+.PHONY: add-helm-repos
+add-helm-repos:
+	argocd repo add https://charts.kubevela.net/core --type helm --name kubevela
+	argocd repo add https://openebs.github.io/charts --type helm --name openebs
+	argocd repo add https://charts.bitnami.com/bitnami --type helm --name bitnami
+	argocd repo add https://releases.rancher.com/server-charts/stable --type helm --name rancher
+
+.PHONY: make-image-secret
+make-image-secret:
+	./script/create-image-pull-secret.sh
+	# TODO HACK - this is skeezy - we should have this specified on workloads
+	kubectl patch sa default -n $NAMESPACE -p '"imagePullSecrets": [{"name": "registry-credentials" }]'

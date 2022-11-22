@@ -39,19 +39,21 @@ make argo-add-config-repo
 
 
 ## TODO
-- Get nginx-ingress working with metallb - nginx daemonset and get it showing default backend
-- Argocd has some reference to a traefik crd that doesn't exist...
-- Add terraform folder & scripts for terraform (for building cluster)
-depending on use case
-- Add workload: crossplane
-- Add workload: OAM
+- Update argocd version - bootstrap it from remote helm chart
+- Script to add do-token (or whatever) to cluster to enable external-dns
+- Make bootstrap idempotent
 - Add workload: cert-manager
 - Add workload: osiris
-- Add workload: argo workflows/events
-- Add workload: earthly/drone
+- Add workload: tekton
 - Add workload: grafana/prometheus
+- Add workload: sloth
+- Add workload: loki
+- Add workload: jaeger
+- Add workload: hubble
 
 ## DONE
 - add .gitignore
 - add bootstrap folder to install gitops operator (argocd) incl. projects
 - Add meta-apps folder to hold apps of apps - .e.g. production, etc
+- Add terraform folder & scripts for terraform (for building cluster)
+depending on use case
