@@ -52,9 +52,10 @@ make argo-add-config-repo
 - Add workload: hubble
 
 ## DONE but needs tested
-- Improve argocd install - use install.yaml as base
+
 
 ## DONE
+- Improve argocd install - use install.yaml as base
 - add .gitignore
 - add bootstrap folder to install gitops operator (argocd) incl. projects
 - Add meta-apps folder to hold apps of apps - .e.g. production, etc
