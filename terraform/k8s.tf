@@ -17,3 +17,10 @@ resource "digitalocean_kubernetes_cluster" "staging" {
     max_nodes  = 4
   }
 }
+
+resource "digitalocean_project_resources" "staging" {
+  project = digitalocean_project.staging.id
+  resources = [
+    digitalocean_kubernetes_cluster.staging.urn,
+  ]
+}

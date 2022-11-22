@@ -1,1 +1,4 @@
+.envrc
+*.tfstate
+*.tfstate.backup
 ./workloads/drone/secrets.yaml

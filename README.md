@@ -39,7 +39,7 @@ make argo-add-config-repo
 
 
 ## TODO
-- Update argocd version - bootstrap it from remote helm chart
+
 - Script to add do-token (or whatever) to cluster to enable external-dns
 - Make bootstrap idempotent
 - Add workload: cert-manager
@@ -50,6 +50,9 @@ make argo-add-config-repo
 - Add workload: loki
 - Add workload: jaeger
 - Add workload: hubble
+
+## DONE but needs tested
+- Improve argocd install - use install.yaml as base
 
 ## DONE
 - add .gitignore

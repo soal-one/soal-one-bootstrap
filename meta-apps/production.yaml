@@ -35,6 +35,9 @@ spec:
     repoURL: git@github.com:soal-one/soal-one-bootstrap
     targetRevision: HEAD
     path: production
+    directory:
+      exclude: 'terraform'
+      recurse: true
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
