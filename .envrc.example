@@ -1,3 +1,5 @@
 export DIGITALOCEAN_ACCESS_TOKEN=fnord
 export DO_B64ENCODED_CREDENTIALS=ashdfkjdslhf
 export GITHUB_TOKEN=fnord
+export VULTR_API_KEY=fnord
+export ARGO_ADMIN_PW=fnord

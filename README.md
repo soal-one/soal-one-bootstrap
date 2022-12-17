@@ -10,8 +10,6 @@ Then:
 ## Quick Start
 
 ```
-k0s apply
-make add-cluster-config
 make bootstrap
 make argo-password # Returns the admin argo password
 # Port forward argocd here
@@ -50,7 +48,7 @@ make argo-add-config-repo
 - Add workload: loki
 - Add workload: jaeger
 - Add workload: hubble
-
+- Add workload: golang org static site, org-roam server
 ## DONE but needs tested
 
 
