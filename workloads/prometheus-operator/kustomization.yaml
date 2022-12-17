@@ -1,0 +1,4 @@
+namespace: prometheus-operator
+
+resources:
+- bundle.yaml
