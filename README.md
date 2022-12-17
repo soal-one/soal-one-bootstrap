@@ -37,10 +37,7 @@ make argo-add-config-repo
 
 
 ## TODO
-
-- Script to add do-token (or whatever) to cluster to enable external-dns
 - Make bootstrap idempotent
-- Add workload: cert-manager
 - Add workload: osiris
 - Add workload: tekton
 - Add workload: grafana/prometheus
@@ -53,6 +50,8 @@ make argo-add-config-repo
 
 
 ## DONE
+- Add workload: cert-manager
+- Script to add do-token (or whatever) to cluster to enable external-dns
 - Improve argocd install - use install.yaml as base
 - add .gitignore
 - add bootstrap folder to install gitops operator (argocd) incl. projects

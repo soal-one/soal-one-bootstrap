@@ -3,7 +3,7 @@ resource "digitalocean_kubernetes_cluster" "staging" {
   region = "nyc1"
 
   auto_upgrade = true
-  version      = "1.24.4-do.0"
+  version      = "1.25.4-do.0"
 
   vpc_uuid = digitalocean_vpc.soal_one_staging.id
 
@@ -14,7 +14,7 @@ resource "digitalocean_kubernetes_cluster" "staging" {
 
     auto_scale = true
     min_nodes  = 2
-    max_nodes  = 4
+    max_nodes  = 5
   }
 }
 
