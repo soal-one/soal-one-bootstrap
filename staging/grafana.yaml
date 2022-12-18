@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: ingress-nginx
+    namespace: grafana
     server: 'https://kubernetes.default.svc'
   project: staging
   syncPolicy:
