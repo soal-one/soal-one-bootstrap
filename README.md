@@ -37,19 +37,26 @@ make argo-add-config-repo
 
 
 ## TODO
+- WTF is up with soal.one domain? Looks like its redirecting to some slavic shit
 - Make bootstrap idempotent
-- Add workload: osiris
-- Add workload: tekton
-- Add workload: grafana/prometheus
-- Add workload: sloth
+- Add workload: KEDA
 - Add workload: loki
+- Add workload: sloth
 - Add workload: jaeger
-- Add workload: hubble
+- Add workload: hubble?
 - Add workload: golang org static site, org-roam server
+- Add workload: dex? hydra? other ory shit?
+- Add workload: pomerium
+- Add workload: authelia?
+- Configure dagger and/or earthly to use tekton
+- Progressive delivery options - flagger, argo rollouts, etc
+- temporal
 ## DONE but needs tested
 
 
 ## DONE
+- Add workload: grafana/prometheus
+- Add workload: tekton
 - Add workload: cert-manager
 - Script to add do-token (or whatever) to cluster to enable external-dns
 - Improve argocd install - use install.yaml as base
