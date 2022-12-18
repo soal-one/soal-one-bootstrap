@@ -12,15 +12,15 @@ bootstrap: ## bootstrap the current cluster with workloads
 
 .PHONY: argo-password
 argo-password: ## Get the initial password for argocd
-	k8sec list -n argocd | grep initial | awk '{print $4}'
+	k8sec list -n argocd | grep initial | awk '{print $4}' | tr -d '"'
 
 .PHONY: argo-add-config-repo
-argo-add-config-repo:
+argo-add-config-repo: ## Add config repo and ssh key
 	 argocd repo add git@github.com:soal-one/soal-one-bootstrap --ssh-private-key-path ~/.ssh/id_ed25519_soalone_staging
 
 .PHONY: add-do-token-secret
 add-do-token-secret: ## Add the DigitalOcean token used by External dns
-	k8sec set do-token token=$$DIGITALOCEAN_ACCESS_TOKEN -n default
+	k8sec set do-token token=$$DIGITALOCEAN_ -n default
 
 .PHONY: add-helm-repos
 add-helm-repos:

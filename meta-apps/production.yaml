@@ -1,47 +1,47 @@
----
+# ---
 
-apiVersion: argoproj.io/v1alpha1
-kind: AppProject
-metadata:
-  name: production
-  namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-spec:
-  description: Production project
-  sourceRepos:
-  - '*'
-  destinations:
-  - namespace: '*'
-    server: https://kubernetes.default.svc
-  clusterResourceWhitelist:
-  - group: '*'
-    kind: '*'
-  namespaceResourceWhitelist:
-  - group: '*'
-    kind: '*'
+# apiVersion: argoproj.io/v1alpha1
+# kind: AppProject
+# metadata:
+#   name: production
+#   namespace: argocd
+#   finalizers:
+#     - resources-finalizer.argocd.argoproj.io
+# spec:
+#   description: Production project
+#   sourceRepos:
+#   - '*'
+#   destinations:
+#   - namespace: '*'
+#     server: https://kubernetes.default.svc
+#   clusterResourceWhitelist:
+#   - group: '*'
+#     kind: '*'
+#   namespaceResourceWhitelist:
+#   - group: '*'
+#     kind: '*'
 
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: production
-  namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-spec:
-  project: production
-  source:
-    repoURL: git@github.com:soal-one/soal-one-bootstrap
-    targetRevision: HEAD
-    path: production
-    directory:
-      exclude: 'terraform'
-      recurse: true
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: argocd
-  syncPolicy:
-    automated:
-      selfHeal: true
-      prune: true
+# ---
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: production
+#   namespace: argocd
+#   finalizers:
+#     - resources-finalizer.argocd.argoproj.io
+# spec:
+#   project: production
+#   source:
+#     repoURL: git@github.com:soal-one/soal-one-bootstrap
+#     targetRevision: HEAD
+#     path: production
+#     directory:
+#       exclude: 'terraform'
+#       recurse: true
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: argocd
+#   syncPolicy:
+#     automated:
+#       selfHeal: true
+#       prune: true
