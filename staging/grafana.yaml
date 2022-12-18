@@ -327,11 +327,11 @@ spec:
         ##
         persistence:
           type: pvc
-          enabled: false
+          enabled: true
           # storageClassName: default
           accessModes:
             - ReadWriteOnce
-          size: 30Gi
+          size: 40Gi
           # annotations: {}
           finalizers:
             - kubernetes.io/pvc-protection
