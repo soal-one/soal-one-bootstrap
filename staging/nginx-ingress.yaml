@@ -7,7 +7,7 @@ spec:
   destination:
     namespace: ingress-nginx
     server: 'https://kubernetes.default.svc'
-  project: production
+  project: staging
   syncPolicy:
     automated: {}
     syncOptions:
