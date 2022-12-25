@@ -19,20 +19,7 @@ spec:
     helm:
       values: |
         global:
-          # To help compatibility with other charts which use global.imagePullSecrets.
-          # Allow either an array of {name: pullSecret} maps (k8s-style), or an array of strings (more common helm-style).
-          # Can be tempalted.
-          # global:
-          #   imagePullSecrets:
-          #   - name: pullSecret1
-          #   - name: pullSecret2
-          # or
-          # global:
-          #   imagePullSecrets:
-          #   - pullSecret1
-          #   - pullSecret2
           imagePullSecrets: []
-
         rbac:
           create: true
           ## Use an existing ClusterRole/Role (depending on rbac.namespaced false/true)
@@ -64,8 +51,6 @@ spec:
         ## Create a headless service for the deployment
         headlessService: false
 
-        ## Create HorizontalPodAutoscaler object for deployment type
-        #
         autoscaling:
           enabled: false
           minReplicas: 1
@@ -142,16 +127,11 @@ spec:
           #   subPath: certificates.crt # (optional)
           #   configMap: certs-configmap
           #   readOnly: true
-
-
         extraEmptyDirMounts: []
           # - name: provisioning-notifiers
           #   mountPath: /etc/grafana/provisioning/notifiers
-
-
         # Apply extra labels to common labels.
         extraLabels: {}
-
         ## Assign a PriorityClassName to pods if set
         # priorityClassName:
 
@@ -658,8 +638,12 @@ spec:
         ##
         ## dashboards per provider, use provider name as key.
         ##
-        dashboards: {}
-          # default:
+        dashboards:
+          default:
+            sloth:
+              gnetId: 14348
+              revision: 5
+              datasource: Prometheus
           #   some-dashboard:
           #     json: |
           #       $RAW_JSON
