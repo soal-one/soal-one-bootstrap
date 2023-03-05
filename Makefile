@@ -20,7 +20,7 @@ argo-add-config-repo: ## Add config repo and ssh key
 
 .PHONY: add-do-token-secret
 add-do-token-secret: ## Add the DigitalOcean token used by External dns
-	k8sec set do-token token=$$DIGITALOCEAN_ -n default
+	k8sec set do-token token=$$DIGITALOCEAN_ACCESS_TOKEN -n default
 
 .PHONY: add-helm-repos
 add-helm-repos:
@@ -29,6 +29,8 @@ add-helm-repos:
 	argocd repo add https://charts.bitnami.com/bitnami --type helm --name bitnami
 	argocd repo add https://releases.rancher.com/server-charts/stable --type helm --name rancher
 	argocd repo add https://grafana.github.io/helm-charts --type helm --name grafana
+	argocd repo add https://microcks.io/helm --type helm --name microcks
+	argocd repo add https://helm.pomerium.io --type helm --name pomerium
 
 .PHONY: make-image-secret
 make-image-secret:

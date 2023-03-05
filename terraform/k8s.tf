@@ -9,12 +9,12 @@ resource "digitalocean_kubernetes_cluster" "staging" {
 
   node_pool {
     name       = "small"
-    size       = "s-1vcpu-2gb"
-    node_count = 2
+    size       = "s-2vcpu-2gb-intel"
+    node_count = 3
 
     auto_scale = true
-    min_nodes  = 2
-    max_nodes  = 5
+    min_nodes  = 3
+    max_nodes  = 6
   }
 }
 
@@ -24,3 +24,18 @@ resource "digitalocean_project_resources" "staging" {
     digitalocean_kubernetes_cluster.staging.urn,
   ]
 }
+
+# resource "vultr_kubernetes" "staging" {
+#   region  = "atl"
+#   label   = "staging"
+#   version = "v1.25.4+1"
+
+#   node_pools {
+#     node_quantity = 3
+#     plan          = "vc2-2c-4gb"
+#     label         = "default"
+#     auto_scaler   = true
+#     min_nodes     = 3
+#     max_nodes     = 5
+#   }
+# }
