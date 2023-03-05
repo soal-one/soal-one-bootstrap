@@ -16,6 +16,11 @@ make argo-password # Returns the admin argo password
 argocd login localhost:8080
 # Add your repository to argocd via Make target
 make argo-add-config-repo
+# Add repos for charts
+make add-helm-repos
+# Add miscellaneous secrets
+make add-do-token-secret
+./scripts/install-keycloak.password.sh
 
 
 ```
@@ -36,11 +41,9 @@ make argo-add-config-repo
 ```
 
 ## TODO
-- Add steps to quick start: external dns, adding helm repos
-- Make domain configurable...cue? :thinking:
-- Add terraform for domain dns setup
-- Clusterctl for creating a civo cluster? OR
-- TF for civo
+- How can we use cue here...
+- figure out whats up with keycloak being a dick
+- Add metrics-server dummy
 - Add workload: microcks
 - Add workload: silly microservices
 - Add workload: robusta?
@@ -74,3 +77,5 @@ make argo-add-config-repo
 - Add meta-apps folder to hold apps of apps - .e.g. production, etc
 - Add terraform folder & scripts for terraform (for building cluster)
 depending on use case
+- Add steps to quick start: external dns, adding helm repos
+- Add terraform for domain dns setup
