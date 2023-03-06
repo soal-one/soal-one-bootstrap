@@ -159,7 +159,7 @@ helmCharts:
         ingressClassName: "nginx"
         pathType: ImplementationSpecific
         apiVersion: ""
-        hostname: keycloak.itscoming.run
+        hostname: keycloak.soal.one
         path: /
         servicePort: http
         annotations: {}
