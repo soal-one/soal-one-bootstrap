@@ -2,6 +2,7 @@ namespace: keycloak
 
 helmCharts:
   - repo: https://helm.pomerium.io
+    name: keycloak
     valuesInline:
       global:
         imageRegistry: ""
