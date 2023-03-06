@@ -1,7 +1,7 @@
 namespace: keycloak
 
 helmCharts:
-  - repo: https://helm.pomerium.io
+  - repo: https://charts.bitnami.com/bitnami
     name: keycloak
     valuesInline:
       global:
