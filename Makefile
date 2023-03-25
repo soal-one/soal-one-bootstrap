@@ -31,7 +31,7 @@ add-helm-repos:
 	argocd repo add https://grafana.github.io/helm-charts --type helm --name grafana
 	argocd repo add https://microcks.io/helm --type helm --name microcks
 	argocd repo add https://helm.pomerium.io --type helm --name pomerium
-        argocd repo add https://k8s.ory.sh/helm/charts --type helm --name ory
+	argocd repo add https://k8s.ory.sh/helm/charts --type helm --name ory
 
 .PHONY: make-image-secret
 make-image-secret:

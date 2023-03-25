@@ -42,9 +42,10 @@ make add-do-token-secret
 
 ## TODO
 - How can we use cue here...
-- figure out whats up with keycloak being a dick
 - Add metrics-server dummy
+- Add workload: ory hydra + consent app
 - Add workload: microcks
+- Add workload: vault
 - Add workload: silly microservices
 - Add workload: robusta?
 - Add workload: hubble
@@ -54,7 +55,6 @@ make add-do-token-secret
 - Add workload: KEDA
 - Add workload: loki
 - Add workload: jaeger
-- Add workload: vault
 - Add workload: hubble?
 - Add workload: golang org static site, org-roam server
 - Add workload: hello-world fastapi example
