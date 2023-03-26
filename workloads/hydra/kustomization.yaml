@@ -1,8 +1,8 @@
-namespace: ory
+namespace: hydra
 
 helmCharts:
   - repo: https://k8s.ory.sh/helm/charts
-    name: ory
+    name: hydra
     valuesInline:
       replicaCount: 1
 
