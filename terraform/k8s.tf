@@ -9,7 +9,7 @@ resource "digitalocean_kubernetes_cluster" "staging" {
 
   node_pool {
     name       = "small"
-    size       = "s-2vcpu-2gb-intel"
+    size       = "s-2vcpu-4gb-intel"
     node_count = 3
 
     auto_scale = true

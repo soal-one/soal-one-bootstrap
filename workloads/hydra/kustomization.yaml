@@ -149,7 +149,9 @@ helmCharts:
           secrets: {}
 
           urls:
-            self: {}
+            self:
+              issuer: https://hydra.soal.one
+              public: https://hydra.soal.one
 
           # -- Enables database migration
         automigration:
