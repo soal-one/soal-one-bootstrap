@@ -72,7 +72,7 @@ helmCharts:
 
       secret:
         # -- switch to false to prevent creating the secret
-        enabled: true
+        enabled: false
         # -- Provide custom name of existing secret, or custom name of secret to be created
         nameOverride: "hydra"
         # nameOverride: "myCustomSecret"
