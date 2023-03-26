@@ -40,9 +40,9 @@ helmCharts:
           # -- The service port name. Useful to set a custom service port name if it must follow a scheme (e.g. Istio)
           name: http
           # -- If you do want to specify annotations, uncomment the following lines, adjust them as necessary, and remove the curly braces after 'annotations:'.
-          annotations: {}
-          # kubernetes.io/ingress.class: nginx
-          # kubernetes.io/tls-acme: "true"
+          annotations:
+            kubernetes.io/ingress.class: nginx
+            kubernetes.io/tls-acme: "true"
           labels: {}
           #      If you do want to specify additional labels, uncomment the following
           #      lines, adjust them as necessary, and remove the curly braces after 'labels:'.
@@ -104,27 +104,25 @@ helmCharts:
                   pathType: ImplementationSpecific
               tls:
                 hosts:
-                  - proxy.hydra.local
-                secretName: hydra-proxy-example-tls
+                  - hydra.soal.one
+                secretName: hydra-proxy-tls
 
         admin:
           # -- En-/Disable the api ingress.
           enabled: false
           className: ""
-          annotations: {}
-          #      If you do want to specify annotations, uncomment the following
-          #      lines, adjust them as necessary, and remove the curly braces after 'annotations:'.
-          #      kubernetes.io/ingress.class: nginx
-          #      kubernetes.io/tls-acme: "true"
+          annotations:
+            kubernetes.io/ingress.class: nginx
+            kubernetes.io/tls-acme: "true"
           hosts:
-            - host: admin.hydra.localhost
+            - host: min.hydra.soal.one
               paths:
                 - path: /
                   pathType: ImplementationSpecific
-      #    tls: []
-      #      hosts:
-      #        - api.hydra.local
-      #      - secretName: hydra-api-example-tls
+              tls:
+                hosts:
+                  - min.hydra.soal.one
+                  - secretName: hydra-api-tls
 
       # -- Configure ORY Hydra itself
       hydra:
