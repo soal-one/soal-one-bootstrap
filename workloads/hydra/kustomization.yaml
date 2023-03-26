@@ -74,7 +74,7 @@ helmCharts:
         # -- switch to false to prevent creating the secret
         enabled: true
         # -- Provide custom name of existing secret, or custom name of secret to be created
-        nameOverride: ""
+        nameOverride: "hydra"
         # nameOverride: "myCustomSecret"
         # -- Annotations to be added to secret. Annotations are added only when secret is being created. Existing secret will not be modified.
         secretAnnotations:
